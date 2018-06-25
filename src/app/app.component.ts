@@ -10,6 +10,8 @@ import { DataService } from './data.service'
 export class AppComponent implements OnInit {
   title = 'app';
 
+  userscore = 0;
+
   questionInfo;
 
   constructor(private DataService: DataService){}
@@ -27,5 +29,15 @@ export class AppComponent implements OnInit {
     this.getQuestionInfo()
   }
 
+  checkAnswer(answer){
+    if(answer == this.questionInfo.answer){
+      this.userscore = this.userscore + this.questionInfo.value;
+      this.getQuestionInfo();
+    }
+    else{
+      this.userscore = this.userscore - this.questionInfo.value;
+      this.getQuestionInfo();
+    }
+  }
 
 }

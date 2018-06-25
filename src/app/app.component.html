@@ -5,4 +5,10 @@
   </h1>
 </div>
 
+<b>The Category:</b> {{questionInfo?.category.title}} <br>
 <b>The Question:</b> {{questionInfo?.question}} <br>
+<b>Point Value:</b> {{questionInfo?.value}} <br>
+<b>Answer:</b> <input [(ngModel)]="answer" type="text">
+<button (click)=checkAnswer(answer)>Submit</button>
+<b>User Score:</b> {{ userscore }} <br>
+{{questionInfo?.answer}}
